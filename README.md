@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Setup
+This project is using yarn, but you can delete the `yarn.lock` file and use `npm`, `pnpm` or whatever fits you best.
 
-## Getting Started
-
-First, run the development server:
-
+After cloning the project, run
 ```bash
-npm run dev
-# or
+cd path/to/the/project
+
+# install dependencies
+yarn
+
+# run project
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Possible errors
+As for the current setup, it may not run the project see [github issue](https://github.com/ProjectOpenSea/opensea-js/issues/421).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+So to have it running, go to `src/pages/index.js` and comment line **5**.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```javascript
+5 // import { OpenSeaPort, Network } from "opensea-js";
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## The task is to create a simple nextjs app that:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Allows a user to connect their web3 wallet (can take inspiration from uniswap connect: https://app.uniswap.org/#/swap?chain=mainnet)
+- [x] Renders all owned NFTs in simple components using the zora sdk: https://github.com/ourzora/nft-components
+- [x] Allows a user to list (can be direct sale) an NFT on opensea via their SDK: https://github.com/ProjectOpenSea/opensea-js
